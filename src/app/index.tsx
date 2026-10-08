@@ -1,24 +1,54 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Alert, Image, Pressable, StyleSheet, Switch, Text, TextInput, View } from "react-native";
 import Aluno from "./components/Aluno";
-import Funcionario from "./components/Funcionario";
 import Multiplicacao from "./components/Multiplicacao";
+import NomeSobrenome from "./components/NomeSobrenome";
 
 export default function Index() {
+  const [campo, setCampo] = useState('');
+  const [ativado, setAtivado] = useState(false);
+
+  const acionarPopUp = () => {
+    Alert.alert('Outro botão');
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Sistema de notas</Text>
+      <Pressable
+        onPress={(evento) => {
+          Alert.alert(`Campo: ${campo}`);
+          console.log('Olá terminal');
+        }}>
+        <Text>Boa noite.</Text>
+      </Pressable>
 
-      <Funcionario nome="Carlos Silva" idade={32} setor="TI" />
+      <NomeSobrenome />
 
       <Aluno
-        nome="Ana Souza"
-        idade={17}
+        nome="Maria Silva"
+        idade={16}
         turma="3º A"
         nota1={8.5}
         nota2={9.0}
       />
 
-      <Multiplicacao valor1={5} valor2={3} valor3={4} />
+      <Multiplicacao />
+
+      <TextInput
+        placeholder="Digite algo..."
+        value={campo}
+        onChangeText={(Text) => { setCampo(Text); }}
+      />
+
+      <Switch
+        value={ativado}
+        onValueChange={(value) => { setAtivado(value); }}
+      />
+
+      <Image
+        source={{ uri: "https://img.magnific.com/fotos-premium/um-cachorro-border-collie-deitado-em-um-caminho_357532-10207.jpg?semt=ais_hybrid&w=740&q=80" }}
+        style={{ width: 740, height: 80 }}
+      />
     </View>
   );
 }
@@ -26,13 +56,7 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "flex-start",
     justifyContent: "center",
-    alignItems: "center",
-    gap: 20,
-  },
-  titulo: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 10,
   },
 });
