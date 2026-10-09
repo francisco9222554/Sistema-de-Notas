@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Alert, Image, Pressable, StyleSheet, Switch, Text, TextInput, View } from "react-native";
-import Aluno from "./components/Aluno";
-import Multiplicacao from "./components/Multiplicacao";
-import NomeSobrenome from "./components/NomeSobrenome";
+import { Alert, StyleSheet, View } from "react-native";
+import Tela1 from "./components/Tela1";
 
 export default function Index() {
   const [campo, setCampo] = useState('');
@@ -14,7 +12,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Pressable
+      {/* <Pressable
         onPress={(evento) => {
           Alert.alert(`Campo: ${campo}`);
           console.log('Olá terminal');
@@ -46,9 +44,13 @@ export default function Index() {
       />
 
       <Image
-        source={{ uri: "https://img.magnific.com/fotos-premium/um-cachorro-border-collie-deitado-em-um-caminho_357532-10207.jpg?semt=ais_hybrid&w=740&q=80" }}
-        style={{ width: 740, height: 80 }}
-      />
+        source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcgjIR9hgoJ8IBDkX_osSPClpxoEh-KRfU6AkeSfetyGOtyD_j1ektDFWY&s=10" }}
+        style={{ width: 740, height: 80 }}/>*/}
+
+        {/* <ExemploStyle_View/>
+        <ExemploStyle_Text/> */}
+
+        <Tela1/>
     </View>
   );
 }
@@ -56,7 +58,5 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
-    justifyContent: "center",
   },
 });
