@@ -2,108 +2,67 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Tela1 = () => {
     return (
-        <>
-            <View style={styles_local.container_fixo}>
-                <View style={[styles_local.fundo_azul,
-                styles_local.tamanho_50, styles_local.borda]} />
-                <View style={[styles_local.fundo_laranja,
-                styles_local.tamanho_50, styles_local.borda]} />
-                <View style={[styles_local.fundo_verde,
-                styles_local.tamanho_50, styles_local.borda]} />
+        <View style={styles.container}>
+            <View style={styles.topo}>
+                <View style={styles.caixaNumero}>
+                    <Text style={styles.textoNumero}>1</Text>
+                    <Text style={styles.textoNumero}>2</Text>
+                    <Text style={styles.textoNumero}>3</Text>
+                </View>
             </View>
-            <View style={styles_local.container_flex}>
-                <Text style={styles_local.texto1}> HELLO </Text>
-                <Text style={styles_local.texto1}> WORLD </Text>
 
+            <View style={styles.baixo}>
+                <Text style={styles.textoHello}>HELLO</Text>
+                <Text style={styles.textoHello}>WORLD</Text>
             </View>
-        </>
+        </View>
     );
-}
+};
 
 export default Tela1;
 
-const styles_local = StyleSheet.create({
-    texto1: {
-        //cor
-        color: '#00c3ff',
-        //criando sombra para o texto
-        textShadowOffset: { width: 10, height: 5 },
-        //cor da sombra do texto
-        textShadowColor: '#0089b2',
-        //embaçar a sombra
-        textShadowRadius: 10,
-        //tamanho da fonte do texto
-        fontSize: 95,
-    },
-
-     texto2: {
-        //cor
-        color: 'Black',
-        //tamanho da fonte do texto
-        fontSize: 30,
-    },
-
-    negrito: {
-        //espessura do texto
-        fontWeight: 'bold',
-    },
-
-    titulo: {
-        //tamanho da fonte do texto
-        fontSize: 30,
-        fontWeight: '100',
-
-    },
-
-    container_fixo: {
-        //valor de preenchimento da área disponível
+const styles = StyleSheet.create({
+    container: {
         flex: 1,
-        //definição do eixo principal
-        flexDirection: 'row',
-        //posicionamento dos objetos no eixo principal
-        justifyContent: 'flex-end',
-        //posicionamento dos objetos no eixo secundário
-        alignItems: 'stretch',
-        //cor de fundo
-        backgroundColor: 'red',
-        //margem
-        margin: 10,
+        backgroundColor: "#FFFFFF",
+        borderWidth: 2,
+        borderColor: "#000000",
     },
-    container_flex: {
-        //valor de preenchimento da área disponível
+    topo: {
         flex: 1,
-        //definição do eixo principal
-        flexDirection: 'column',
-        //posicionamento dos objetos no eixo principal
-        justifyContent: 'center',
-        //posicionamento dos objetos no eixo secundário
-        alignItems: 'center',
-        //cor de fundo
-        backgroundColor: '#FFFACD',
-
+        flexDirection: "row-reverse",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        paddingTop: 15,
+        paddingRight: 15,
+        borderBottomWidth: 2,
+        borderBottomColor: "#000000",
     },
-    fundo_azul: {
-        //cor de fundo
-        backgroundColor: 'blue'
+    caixaNumero: {
+        width: 36,
+        height: 36,
+        borderWidth: 2,
+        borderColor: "#000000",
+        justifyContent: "center",
+        alignItems: "center",
+        marginLeft: 6,
+        backgroundColor: "#FFFFFF",
     },
-    fundo_laranja: {
-        //cor de fundo
-        backgroundColor: 'orange'
+    textoNumero: {
+        fontSize: 18,
+        fontWeight: "bold",
+        color: "#000000",
     },
-    fundo_verde: {
-        //cor de fundo
-        backgroundColor: 'green'
+    baixo: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FFFFFF",
     },
-    tamanho_50: {
-        //largura
-        width: 40,
-        //altura
-        height: 50
+    textoHello: {
+        fontSize: 40,
+        fontWeight: "bold",
+        color: "#000000",
+        textAlign: "center",
     },
-    borda: {
-        //cor da borda
-        borderColor: 'black',
-        //espessura da borda
-        borderWidth: 1
-    }
 });
